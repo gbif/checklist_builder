@@ -96,6 +96,7 @@ public class ArchiveBuilder extends AbstractBuilder {
   //     2022-1: https://www.iucnredlist.org/search?dl=true&permalink=2b8593b2-4e46-4ebc-9a46-e63627f2b54c
   //     2024-2: https://www.iucnredlist.org/search?dl=true&permalink=34d65136-e15c-423a-8d6f-d2b8da3e1fca
   //     2025-1: https://www.iucnredlist.org/search?dl=true&permalink=a84bbd4d-cff0-48e7-b35d-d6e840e54c63
+  //     2025-2: https://www.iucnredlist.org/search?dl=true&permalink=bb37adc0-d912-45df-8f98-4f29863b9658
   //   • Magnoliopsida:
   //     2020-3: https://www.iucnredlist.org/search?dl=true&permalink=774a66fc-ab93-4f38-b7cf-be12e3991867
   //     2021-2: https://www.iucnredlist.org/search?dl=true&permalink=b43be10f-29f0-4578-ba9d-9d36c013d5ed
@@ -103,6 +104,7 @@ public class ArchiveBuilder extends AbstractBuilder {
   //     2022-1: https://www.iucnredlist.org/search?dl=true&permalink=f66e8cce-8332-482d-bc24-ca807f8f06b2
   //     2024-2: https://www.iucnredlist.org/search?dl=true&permalink=72846f1a-333f-4c46-9e9a-cb2020c732f3
   //     2025-1: https://www.iucnredlist.org/search?dl=true&permalink=eff73c99-5c5c-4a87-a48d-8e7073938d76
+  //     2025-2: https://www.iucnredlist.org/search?dl=true&permalink=a20e2758-df51-4a3a-adba-8f77b430e220
   //   • Animalia except Chordata:
   //     2020-3: https://www.iucnredlist.org/search?dl=true&permalink=7a668685-6d45-456e-bf20-e68206970be2
   //     2021-2: https://www.iucnredlist.org/search?dl=true&permalink=04ae69d8-62e5-43b3-ad3d-205d249bba05
@@ -110,6 +112,7 @@ public class ArchiveBuilder extends AbstractBuilder {
   //     2022-1: https://www.iucnredlist.org/search?dl=true&permalink=f6b2fec8-5de2-4440-8922-a153a48d457b
   //     2024-2: https://www.iucnredlist.org/search?dl=true&permalink=94225c42-c643-43a9-84ac-372a9b39df4e
   //     2025-1: https://www.iucnredlist.org/search?dl=true&permalink=59b9b612-f23c-42a0-9831-66fb76f11ae3
+  //     2025-2: https://www.iucnredlist.org/search?dl=true&permalink=776dcabd-dada-4adf-bb88-528135699411
   //   • Chordata except Passeriformes:
   //     2020-3: https://www.iucnredlist.org/search?dl=true&permalink=1975aa7a-d2df-44fc-846b-b9dcb22da748
   //     2021-2: https://www.iucnredlist.org/search?dl=true&permalink=6957ecea-6987-46b8-858b-46c88dd52a66
@@ -117,6 +120,7 @@ public class ArchiveBuilder extends AbstractBuilder {
   //     2022-1: https://www.iucnredlist.org/search?dl=true&permalink=75302296-51fa-4d15-a1c1-772232e12944
   //     2024-2: https://www.iucnredlist.org/search?dl=true&permalink=dfd8a856-0567-4ccd-be2c-57c8f9b9843c
   //     2025-1: https://www.iucnredlist.org/search?dl=true&permalink=063a6746-0229-45eb-89d6-43788990e513
+  //     2025-2: https://www.iucnredlist.org/search?dl=true&permalink=1a6f9766-2843-45a8-b862-c3126cf5ac1d
   //   • Passeriformes:
   //     2020-3: https://www.iucnredlist.org/search?dl=true&permalink=4bde9672-b4c3-4cd3-b082-cad5070cc0a0
   //     2021-2: https://www.iucnredlist.org/search?dl=true&permalink=0d602296-1d48-427b-ad5c-71f232b0874b
@@ -124,6 +128,7 @@ public class ArchiveBuilder extends AbstractBuilder {
   //     2022-1: https://www.iucnredlist.org/search?dl=true&permalink=a5792c2f-2312-4048-b344-5fe2f06fc7ff
   //     2024-2: https://www.iucnredlist.org/search?dl=true&permalink=1b262de2-e7ec-45e4-a9d8-5e7785e1d34d
   //     2025-1: https://www.iucnredlist.org/search?dl=true&permalink=368b8121-10d8-49fb-8bc4-0a9278d6fa14
+  //     2025-2: https://www.iucnredlist.org/search?dl=true&permalink=ff8d45d0-875a-4f62-9d24-40a073c21ce8
   // Then it is downloaded in "Search Results" format.  Splitting the birds in two is necessary
   // to enable use of the "Search Results" format, and splitting everything else into parts is
   // needed to avoid overwhelming the IUCN service — without this, dois.txt is usually blank.
@@ -136,18 +141,18 @@ public class ArchiveBuilder extends AbstractBuilder {
   // Downloads take about 2 hours to complete.
   //
   // Expected total results
-  private static final int EXPECTED_TOTAL = 13955 + 64189 + 28940 + 57717 + 6694;
+  private static final int EXPECTED_TOTAL = 14448 + 65846 + 29682 + 58066 + 6688;
 
   // Red List version
-  private static final String VERSION = "2025-1";
+  private static final String VERSION = "2025-2";
 
   // The downloads are stored in a private location in accordance with the IUCN terms and conditions.
   private static final String[] DOWNLOADS = new String[]{
-    "https://hosted-datasets.gbif.org/datasets/protected/iucn/2025-1/redlist_species_data_0d5680cd-1219-4d4e-ba0a-00257aa1ea72.zip", // Chromista, Fungi, Plantae except Magnoliopsida
-    "https://hosted-datasets.gbif.org/datasets/protected/iucn/2025-1/redlist_species_data_6f9c1e7b-067c-4039-9ebc-10927a9bf636.zip", // Magnoliopsida
-    "https://hosted-datasets.gbif.org/datasets/protected/iucn/2025-1/redlist_species_data_c40b3b2b-6cfb-4074-b58e-b42e7590d1f8.zip", // Animalia except Chordata
-    "https://hosted-datasets.gbif.org/datasets/protected/iucn/2025-1/redlist_species_data_73742d23-0088-49e8-9fd2-5ef7cfdb0d30.zip", // Chordata except Passeriformes
-    "https://hosted-datasets.gbif.org/datasets/protected/iucn/2025-1/redlist_species_data_0015ea20-00da-45a6-b157-9b14399073af.zip"  // Passeriformes
+    "https://hosted-datasets.gbif.org/datasets/protected/iucn/2025-2/redlist_species_data_0d65c254-b618-4bac-8652-1481d56b747e.zip", // Chromista, Fungi, Plantae except Magnoliopsida
+    "https://hosted-datasets.gbif.org/datasets/protected/iucn/2025-2/redlist_species_data_86ace00b-235a-4007-a10e-2ce854d1bf21.zip", // Magnoliopsida
+    "https://hosted-datasets.gbif.org/datasets/protected/iucn/2025-2/redlist_species_data_3bdc8fc4-7bb5-4218-9c42-2571662529ef.zip", // Animalia except Chordata
+    "https://hosted-datasets.gbif.org/datasets/protected/iucn/2025-2/redlist_species_data_c3f7f743-ed5f-4732-a17b-a82639378d9d.zip", // Chordata except Passeriformes
+    "https://hosted-datasets.gbif.org/datasets/protected/iucn/2025-2/redlist_species_data_024aa8e4-6bd1-493f-991f-ff339e10415a.zip"  // Passeriformes
   };
 
   // columns for taxonomy.csv
