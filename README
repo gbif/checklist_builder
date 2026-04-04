@@ -1,3 +1,6 @@
 # Checklist Builder
 
 Various conversion tools to create Darwin Core archive checklists from online sources not readily available as Darwin Core archives.
+
+# DEPRECATION !!!
+This project is deprecated, please use the newer and mantained https://github.com/CatalogueOfLife/coldp-generator instead!
